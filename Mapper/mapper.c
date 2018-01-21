@@ -1,4 +1,3 @@
-#include<unist.h>
 #include<stdio.h>
 #include<stdlib.h> 
 //P=50,	L=20,	D=-10,	C=30,	S=40 
@@ -15,11 +14,11 @@ void adjust(char A, char In[])
 	
 	switch(A)
 	{
-		case 'P': m = P;break; 
-		case 'L': m = L;break;
-		case 'D': m = D;break;
-		case 'C': m = C;break;
-		case 'S': m = S;break;
+		case 'P': m = P;printf("\n");break;
+		case 'L': m = L;printf("\n");break;
+		case 'D': m = D;printf("\n");break;
+		case 'C': m = C;printf("\n");break;
+		case 'S': m = S;printf("\n");break;
 		default: break;
 	}
 	
@@ -46,7 +45,6 @@ void adjust(char A, char In[])
 		n++;
 	}
 	*n = '\0';
-	//printf("%c\n",In);
 } 
 int main(void)
 {
