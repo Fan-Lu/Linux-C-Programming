@@ -3,6 +3,21 @@
 
 //P=50,	L=20,	D=-10,	C=30,	S=40 
 
+void Space_Trim(char *pStr)
+{
+		char *pTmp = pStr;
+
+		while(*pStr != '\0')
+		{
+				if(*pStr != ' ')
+				{
+						*pTmp++ = *pStr;
+				}
+				++pStr;
+		}
+		*pTmp = '\0';
+}
+
 void adjust(char A, char In[])
 {
 	char *P = ",50)";
@@ -74,6 +89,7 @@ int main(void)
 		char *add = &input[6];
 		x=*add;
 		adjust(x,output);
+		Space_Trim(output);
 		printf(output);
 		char *text = output;
 		fprintf(f, output, text);
