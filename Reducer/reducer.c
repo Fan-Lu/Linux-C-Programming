@@ -1,13 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h> 
 #include<math.h>
+#include<string.h>
 
 //P=50,	L=20,	D=-10,	C=30,	S=40 
 
 int main(void)
 {
 	int line = 0;
-	char input[20000];
+	char input[200];
 	char save[50][50];
 	char compare[7];
 	char standard[7];
@@ -19,27 +20,17 @@ int main(void)
 	FILE *pToFileForm = fopen("mapper_output.txt", "r");
 	
 	printf("input.txt: \n");
-	while (fgets(input,20000,pToFileForm))//read information from the file and save the data into the struct
-	{
-		int i=0;
-		while(1)
-		{		
-			int g=0;
-			for(;input[i]!=')';i++,g++)
-			{
-				save[line][g]=input[i];	
-			}
-			save[line][g]=')';
-			i++;
-			g++;
-			save[line][g]='\0';
-			if(line==49)
-			{
-				break;
-			}
-			//printf(save[line]);
-			line++;
+	while (fgets(input,200,pToFileForm))//read information from the file and save the data into the struct
+	{		
+		int g=0;
+		for(;input[g]!=')';g++)
+		{
+			save[line][g]=input[g];	
 		}
+		save[line][g]=')';
+		g++;
+		save[line][g]='\0';
+		line++;
 	}	
 	fclose(pToFileForm);
 	
@@ -105,7 +96,7 @@ int main(void)
 		}
 	}	
 	int r=0;
-	FILE *fp = fopen("reduce_output.txt", "w");
+	FILE *fp = fopen("reducer_output.txt", "w");
 	while(r!=50)
 	{
 		if(save[r][0]!='X')
@@ -117,9 +108,13 @@ int main(void)
 			for(d=1;save[r][d-1]!=')';d++)
 			{
 				mid[d]=save[r][d];
-				printf("%c",mid[d]);
+				if(save[r][d]==')')
+					printf("%c\n",mid[d]);
+				else
+					printf("%c",mid[d]);
 			}
-			mid[d]='\0';
+			mid[d]='\n';
+			mid[d+1]='\0';
 			char *text = mid;
 			fprintf(fp,mid,text);
 		}
@@ -127,7 +122,7 @@ int main(void)
 	}
 	fclose(fp);
 	printf("\nover\n");
-	system("pause"); 
+	//system("pause"); 
 	return 0;	
 }
 
