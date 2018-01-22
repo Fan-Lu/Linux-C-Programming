@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h> 
+
 //P=50,	L=20,	D=-10,	C=30,	S=40 
 
 void adjust(char A, char In[])
@@ -14,11 +15,11 @@ void adjust(char A, char In[])
 	
 	switch(A)
 	{
-		case 'P': m = P;printf("\n");break;
-		case 'L': m = L;printf("\n");break;
-		case 'D': m = D;printf("\n");break;
-		case 'C': m = C;printf("\n");break;
-		case 'S': m = S;printf("\n");break;
+		case 'P': m = P;break;
+		case 'L': m = L;break;
+		case 'D': m = D;break;
+		case 'C': m = C;break;
+		case 'S': m = S;break;
 		default: break;
 	}
 	
@@ -31,7 +32,9 @@ void adjust(char A, char In[])
 			q++;
 		}		
 	}
-	*q = '\0';
+	*q = '\n';
+	q++;
+	q = '\0';
 	
 	for(p=In,n=In;*(p+1)!=')';p++)
 	{
@@ -44,6 +47,8 @@ void adjust(char A, char In[])
 		*n=*m;
 		n++;
 	}
+	*n = '\n';
+	n++;
 	*n = '\0';
 } 
 int main(void)
@@ -56,7 +61,7 @@ int main(void)
 	FILE *pToFileForm = fopen("input.txt", "r");
 	FILE *f = fopen("mapper_output.txt", "w");
 
-	printf("input.txt: \n");
+	printf("mappper_output.txt: \n");
 	while (fgets(input,26,pToFileForm))
 	{
 		line++;
