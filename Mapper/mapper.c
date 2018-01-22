@@ -89,9 +89,9 @@ int main(void)
 		char *add = &input[6];
 		x=*add;
 		adjust(x,output);
-		Space_Trim(output);
-		printf(output);
+		//Space_Trim(output);
 		char *text = output;
+		printf("%s", text);
 		fprintf(f, output, text);
 	}	
 	
