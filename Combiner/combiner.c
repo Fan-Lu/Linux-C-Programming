@@ -6,7 +6,7 @@
 #include<math.h>
 #include<string.h> 
 
-int main()
+int main(void)
 {
 	int n,fd[2];
 	char buf[100];
