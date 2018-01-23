@@ -28,7 +28,7 @@ int main(void)
 		
 		if(fd[1] != STDOUT_FILENO)
 		{
-			if(dup2(fd[1],STDOUT_FILENO) == -1)
+			if(dup2(fd[1],STDIN_FILENO) == -1)
 				perror("dup2 1 error");
 			if(close(fd[1]) == -1)
 				perror("close 2 error"); 
@@ -52,7 +52,7 @@ int main(void)
 
 		if(fd[0] != STDIN_FILENO)
 		{
-			if(dup2(fd[0],STDOUT_FILENO) == -1)
+			if(dup2(fd[0],STDIN_FILENO) == -1)
 				perror("dup2 1 error");
 			if(close(fd[0]) == -1)
 				perror("close 4 error"); 
