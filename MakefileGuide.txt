@@ -1,0 +1,23 @@
+1. 运行autoscan, 生成autoscan.log, configure.scan
+2. 将configure.scan文件重命名为configure.ac
+   命令： mv configure.scan configure.ac
+3. 修改configure.ac中的内容
+   AC_INIT([HelloMakefile], [1.0], [thejoeworld@gmail.com])
+   AC_CONFIG_SRCDIR([main.c])
+   # Checks for programs.  
+   AC_PROG_CC 
+   # auto init 
+   AM_INIT_AUTOMAKE(HelloMakefile, 1.0)
+   # write out to the Makefile 
+   AC_OUTPUT(Makefile)
+4. 执行aclocal命令，生成aclocal.m4 auto4te.cache两个文件
+5. 制作Makefile.am文件
+   AUTOMAKE_OPTIONS=foreign 
+   bin_PROGRAMS=HelloMakefile
+   HelloMakefile_SOURCES=main.c
+6. 执行autoheader命令生成config.h.in
+7 .执行automake --add-missing
+8. 执行autoconf命令生成configure文件
+9. 执行./configure命令测试
+10.执行make命令，生成makefile
+11.执行./makefile测试成功
