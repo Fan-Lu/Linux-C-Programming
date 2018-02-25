@@ -2,3 +2,4 @@
     (1) delete folder;
     (2) sudo gedit ~/.bashrc
         #export PATH=/home/anaconda2/bin:$PATH
+        source ~/.bashrc
