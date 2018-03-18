@@ -2,7 +2,7 @@
 Rewrite the combiner program using mmap system call with anonymous mapping (no backingfile).
 
 # Excution Procedure
-1.  To excute the code, please mmap make file exist. If not, please use the command:  
+1.  To excute the code, please makesure that mmap makefile exist. If not, please use the command:  
     gcc -o mmap -pthread mmap.c   
 2.  Second, you need to delete the reducer_output.txt to have the correct results;  
 3.  If all are done, then excute the following command:  
