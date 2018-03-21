@@ -8,8 +8,8 @@ Commads:
 3. add to dev directory, 666 means all users can use this device;  
    700: major number; 0: minor number  
    sudo mknod -m 666 /dev/tuxdrv c 700 0
-4. See the hearder file, look the functions defined here.
-   vim /lib/modules/$(uname -r)/build/include/linux/fs.h
-5. uname -r
-   4.13.xxxxxxx(kernel folders)
-   split /lib/modules/4.13.xxxxxxx/build/include/linux/fs.h
+4. See the hearder file, look the functions defined here.  
+   vim /lib/modules/$(uname -r)/build/include/linux/fs.h  
+5. uname -r  
+   4.13.xxxxxxx(kernel folders)  
+   split /lib/modules/4.13.xxxxxxx/build/include/linux/fs.h  
