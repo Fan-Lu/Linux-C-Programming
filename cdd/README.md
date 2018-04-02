@@ -15,3 +15,11 @@ Commads:
    split /lib/modules/4.13.xxxxxxx/build/include/linux/fs.h  
 6. list all modules 
    lsmod
+7. see what devices installed, major number can be seen from syslog
+   ls -l /dev | grep "250,"  
+     
+   if there are no device file created under /dev with the same major numeber  
+   we can create them by hand, using  
+   sudo mknod /dev/mycdev0 c 250 0  
+   sudo mknod /dev/mycdev1 c 250 1  
+   sudo mknod /dev/mycdev2 c 250 2  
