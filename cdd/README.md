@@ -12,4 +12,6 @@ Commads:
    vim /lib/modules/$(uname -r)/build/include/linux/fs.h  
 5. uname -r  
    4.13.xxxxxxx(kernel folders)  
-   split /lib/modules/4.13.xxxxxxx/build/include/linux/fs.h  
+   split /lib/modules/4.13.xxxxxxx/build/include/linux/fs.h  
+6. list all modules 
+   lsmod
