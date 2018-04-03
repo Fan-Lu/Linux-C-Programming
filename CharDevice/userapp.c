@@ -9,8 +9,8 @@
 
 #define DEVICE "/dev/mycdrv"
 
-#define CDRV_IOC_MAGIC 'Z'
-#define ASP_CLEAR_BUF _IOW(CDRV_IOC_MAGIC, 1, int)
+#define CDRV_IOC_MAGIC 0x37
+#define ASP_CLEAR_BUF _IO(CDRV_IOC_MAGIC, 0)
 
 
 int main(int argc, char *argv[]) {
