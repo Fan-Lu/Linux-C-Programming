@@ -1,0 +1,1 @@
+cmd_/home/fanlu/RaceCondition_chardriver/TESTCASE4/driver_testcase4.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/fanlu/RaceCondition_chardriver/TESTCASE4/driver_testcase4.ko /home/fanlu/RaceCondition_chardriver/TESTCASE4/driver_testcase4.o /home/fanlu/RaceCondition_chardriver/TESTCASE4/driver_testcase4.mod.o ;  true

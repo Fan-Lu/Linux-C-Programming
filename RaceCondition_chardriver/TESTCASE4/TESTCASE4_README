@@ -1,0 +1,8 @@
+1.There are 2 threads, thread 0 and thread 1.  
+2.Both of the threads share a common mutex lock in the userapp.  
+3.Thread 1 gets launched and reads from the device.  
+4.It acquires the semaphore to read mode from the device, but sleeps after that (sleeps on line 100 of driver code).  
+5.The context is changed to thread 0 while thread 1 sleeps. The thread 0 acquires the mutex lock and writes to the device by copying from the protected global buffer.  
+6.It cannot finish as thread 1 has locked the semaphore to read the mode and is sleeping.  
+7.The context again changes to thread 0, which wakes up and completes read but cannot proceed as it tries to acquire the mutex lock in the userapp which was already acquired by thread 1.  
+8.So, a deadlock occurs. 

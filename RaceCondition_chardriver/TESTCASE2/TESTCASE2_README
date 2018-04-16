@@ -1,0 +1,3 @@
+1.In this userapp, the device is opened from mainline
+2.3 threads Thread0, Thread1, Thread2 are called from the mainline. 3.>T2 tries to open a new file for read/write operations, but since already a file is open in mode 1, it cannot proceed, so it 	sleeps.
+4.T0 and T1 operate on the file that was opened by the main thread, T1 tries to use ioctl for mode2 and T0 tries to use ioctl for mode1. 5.>Both can proceed as there needs to be only one file 	open for ioctl to occur. All threads are not able to proceed and a deadlock occurs.
