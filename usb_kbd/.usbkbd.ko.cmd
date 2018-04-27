@@ -1,0 +1,1 @@
+cmd_/home/fanlu/Downloads/LU_FAN_Assignment7/usbkbd.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/fanlu/Downloads/LU_FAN_Assignment7/usbkbd.ko /home/fanlu/Downloads/LU_FAN_Assignment7/usbkbd.o /home/fanlu/Downloads/LU_FAN_Assignment7/usbkbd.mod.o ;  true

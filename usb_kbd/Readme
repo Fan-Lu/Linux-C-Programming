@@ -1,0 +1,9 @@
+ASP Assignment 7
+USB Keyboard Driver code with two modes.On a Numlock press there will be a a state transition from mode 1 to Mode 2  and vice versa
+
+1.>extract all the documents
+2.>bindin.sh,usbkbd.c,Makefile
+3.>enter make
+4.>from the virtual box select input device as usb kbd that one connects
+5.>run the script bindin.sh; sudo bash ./bindin.sh
+6.>test the keyboard
